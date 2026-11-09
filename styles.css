@@ -1,0 +1,152 @@
+:root {
+  color-scheme: light;
+  --paper: #fff;
+  font-family: Arial, sans-serif;
+  background: var(--paper);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: #fff;
+}
+
+main {
+  width: min(1040px, calc(100% - 32px));
+  margin: 12px auto 24px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 20px 18px;
+}
+
+.artwork {
+  position: relative;
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1.5;
+  margin: 0;
+  place-items: center;
+}
+
+.artwork img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.penguin-artwork {
+  aspect-ratio: 1.5;
+  border: 2px solid #e4dfc2;
+  border-radius: 50%;
+  background: #f8f5e4;
+}
+
+.penguin-artwork img {
+  width: 94%;
+  height: 90%;
+  border-radius: 50%;
+  filter: sepia(0.65);
+}
+
+.field-artwork {
+  aspect-ratio: 1.8;
+}
+
+.field-artwork img {
+  border: 13px solid transparent;
+  border-image-source: url("assets/tic-tac-toe.png");
+  border-image-slice: 53 fill;
+  border-image-width: 13px;
+  border-image-repeat: round;
+  filter: grayscale(1);
+}
+
+.dinosaur-artwork {
+  aspect-ratio: 1.2;
+}
+
+.dinosaur-artwork img {
+  width: 92%;
+  height: 100%;
+  filter: hue-rotate(115deg) drop-shadow(3px 4px 3px rgba(33, 54, 155, 0.35));
+}
+
+.seagull-artwork {
+  aspect-ratio: 1.45;
+  background-image: linear-gradient(135deg, #c8d7f6 0%, #d7c8f1 100%);
+  box-shadow: 0 2px 8px rgba(45, 50, 105, 0.32);
+}
+
+.seagull-artwork img {
+  width: 100%;
+  height: 100%;
+}
+
+.butterfly-artwork {
+  aspect-ratio: 1.55;
+  background: #c9bee5;
+}
+
+.butterfly-artwork img {
+  filter: invert(1);
+  border-radius: 46% 0 46% 0;
+}
+
+.theater-scene {
+  aspect-ratio: 1.2;
+  overflow: hidden;
+}
+
+.theater-scene img {
+  filter: blur(2px);
+  transform: scale(1.025);
+}
+
+.presenting {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  max-width: 95%;
+  color: #fff4d8;
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+  text-align: center;
+  text-shadow: 1px 2px 3px #241012, 0 0 8px #000;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 600px) {
+  main {
+    width: calc(100% - 20px);
+    margin-top: 10px;
+  }
+
+  .gallery {
+    gap: 14px 12px;
+  }
+
+  .field-artwork img {
+    border-width: 9px;
+    border-image-width: 9px;
+  }
+
+  .presenting {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
